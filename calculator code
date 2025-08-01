@@ -1,0 +1,52 @@
+def addition (a,b):
+    solution=a+b
+    return solution
+
+def subtraction (a,b):
+    solution= a-b
+    return solution
+
+def multiplication (a,b):
+    solution = a*b
+    return solution
+
+def division (a,b):
+    solution = a/b
+    return solution
+
+def percentage (a,b):
+    solution = (a/100)*b
+    return solution
+
+def exponent (a,b):
+    solution = a**b
+    return solution
+#main program
+choice=""
+menu_list=("A","S","M","D","P","E")
+sub=menu_list[0:4]
+print("welcome to Joy's calculator")
+while choice == "":
+   choice=input("what operation would you like to carry out?  ")
+menu=choice.strip().upper()[0] 
+if menu not in menu_list:
+    print("Sorry that operation is not available")
+elif menu in sub:
+    num1=int(input("enter the first number"))
+    num2=int(input("enter second number"))
+    if menu == "A":
+        print(addition(num1,num2))
+    elif menu == "S":
+        print(subtraction(num1,num2))
+    elif menu == "D":
+        print(division(num1,num2))
+    else:
+        print(multiplication(num1,num2))
+elif menu == "P":
+    num1=int(input("enter the percentage you would like"))
+    num2=int(input("enter the number"))
+    print(percentage(num1,num2))
+elif menu == "E":
+    num1=int(input("enter the number"))
+    num2=int(input("enter the number you want to be the exponent"))
+    print(exponent(num1,num2))
